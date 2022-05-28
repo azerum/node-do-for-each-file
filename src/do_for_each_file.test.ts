@@ -207,7 +207,7 @@ test(
 );
 
 //If you want to run this test, first ensure that there are bunch of files in
-//`files-for-testing/`. Use `test-utils/generate-files.ts` to generate them
+//`files-for-testing/`. Use `generate-files.ts` to generate them
 test.skip('Works in a real situation with a lot of files', done => {
     const filesDirectory = path.resolve(__dirname, '../files-for-testing');
 
