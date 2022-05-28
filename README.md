@@ -8,7 +8,7 @@ function doForEachFile<T>(
 ```
 
 It allows you to execute an action for each filename from
-the array (e.g. read the whole contents of the file) while also handling `EMFILE` (the limit of max opened files per process exceeded by Node.js) and `ENFILE` (the limit of max opened files in the whole OS is exceeded).
+the array (e.g. read the whole contents of the file) while also handling `EMFILE` (the limit of max opened files per process exceeded by your program) and `ENFILE` (the limit of max opened files in the entire OS is exceeded).
 
 You can then consume the results of each `action` as
 `Observable`
