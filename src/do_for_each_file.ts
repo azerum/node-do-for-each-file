@@ -60,7 +60,7 @@ export default function doForEachFile<T>(
                         () => {
                             handleNextPostponedFileIfAny();
                             timeout = null;
-                        }, 
+                        },
 
                         nextBackoffTimeInMs
                     );
@@ -83,7 +83,7 @@ export default function doForEachFile<T>(
 
     function handleNextPostponedFileIfAny() {
         if (postponedFiles.length > 0) {
-            const file = postponedFiles.splice(0, 1)[0];
+            const file = postponedFiles.shift();
             handle(file);
         }
     }

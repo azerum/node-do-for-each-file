@@ -17,7 +17,6 @@ const p = (filePath: string) => path.resolve(__dirname, '../files-for-testing', 
 fs.writeFileSync(p('./a0.bin'), asBytes,  { flag: 'w' });
 
 for (let i = 1; i < copiesCount; ++i) {
-
     fs.copyFile(p('./a0.bin'), p(`./a${i}.bin`), err => {
         if (err) {
             console.error(err);
