@@ -82,8 +82,9 @@ export default function doForEachFile<T>(
     }
 
     function handleNextPostponedFileIfAny() {
-        if (postponedFiles.length > 0) {
-            const file = postponedFiles.shift();
+        const file: string | undefined = postponedFiles.shift();
+
+        if (file !== undefined) {
             handle(file);
         }
     }
