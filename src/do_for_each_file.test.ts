@@ -42,7 +42,7 @@ function delay(ms: number): Promise<void> {
 function failShouldNotError(error: any) {
     console.log('Got error: ', error);
     
-    fail("Observable should complete without errors. " + 
+    throw Error("Observable should complete without errors. " + 
         "See console log for the details about the error"
     );
 }
@@ -70,7 +70,7 @@ test(
 
         observable.subscribe({
             complete() {
-                fail('Observable should have failed');
+                throw Error('Observable should have failed');
             },
 
             error(error) {
@@ -208,12 +208,12 @@ test(
 
 //If you want to run this test, first ensure that there are bunch of files in
 //`files-for-testing/`. Use `generate-files.ts` to generate them
-test.skip('Works in a real situation with a lot of files', done => {
+test('Works in a real situation with a lot of files', done => {
     const filesDirectory = path.resolve(__dirname, '../files-for-testing');
 
     fs.readdir(filesDirectory, (err, filenames) => {
         if (err) {
-            fail(err);
+            throw err;
         }
 
         async function action(filename: string): Promise<string> {
